@@ -1,0 +1,29 @@
+{
+  "name": "visibility",
+  "description": "A little browserify-able shim/wrapper for the Page Visibility API",
+  "version": "0.0.0",
+  "main": "index.js",
+  "browser": "index.js",
+  "dependencies": {
+    "inherits": "~2.0.1"
+  },
+  "devDependencies": {
+    "browserify": "~2.33.1",
+    "installify": "~0.1.1",
+    "beefy": "~0.4.4"
+  },
+  "scripts": {
+    "start": "beefy demo.js:bundle.js --live -- -t installify",
+    "prepublish": "browserify demo.js -t installify > bundle.js"
+  },
+  "author": "Hugh Kennedy <hughskennedy@gmail.com> (http://github.com/hughsk)",
+  "license": "MIT",
+  "homepage": "http://hughsk.github.io/visibility",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/hughsk/visibility"
+  },
+  "bugs": {
+    "url": "https://github.com/hughsk/visibility/issues"
+  }
+}
