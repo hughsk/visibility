@@ -18,10 +18,6 @@ if (typeof document.mozHidden !== 'undefined') {
 if (typeof document.webkitHidden !== 'undefined') {
   hidden = 'webkitHidden'
   change = 'webkitvisibilitychange'
-} else
-if (typeof document.webkitHidden !== 'undefined') {
-  hidden = 'webkitHidden'
-  change = 'webkitvisibilitychange'
 }
 
 inherits(Visibility, EventEmitter)
