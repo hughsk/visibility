@@ -4,9 +4,13 @@ var inherits = require('inherits')
 var shimvis = true
 var change = null
 var hidden = null
+var doc = typeof document !== 'undefined'
 
 module.exports = Visibility
 
+if (!doc) {
+	// Just skips the other stuff
+} else
 if (typeof document.hidden !== 'undefined') {
   hidden = 'hidden'
   change = 'visibilitychange'
@@ -31,6 +35,8 @@ function Visibility() {
 
   EventEmitter.call(this)
   this.supported = !!hidden
+
+  if(!doc) return this
 
   if (this.supported) {
     document.addEventListener(change, function() {
